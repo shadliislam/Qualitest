@@ -1,5 +1,6 @@
 package com.qa.testcases;
 
+import com.qa.Analyzer.RetryAnalyzer;
 import com.qa.base.TestBase;
 import com.qa.pages.HomePage;
 import org.testng.Assert;
@@ -19,7 +20,7 @@ public class HomePageTest extends TestBase {
 		initialization();
 		homePage = new HomePage();
 	}
-	@Test(priority=1)
+	@Test(priority=1, retryAnalyzer = RetryAnalyzer.class)
 	public void elementPresentTest(){
 		boolean flag =homePage.elementIsPresent();
 		Assert.assertTrue(flag);
